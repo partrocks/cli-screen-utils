@@ -1,0 +1,45 @@
+{
+  "name": "@partrocks/cli-screen-utils",
+  "author": "Paul Rooney <info@happycoder.co.uk> (PartRocks)",
+  "license": "agpl-3.0",
+  "version": "0.0.1",
+  "description": "Cli Tools for Terminal based GUI Applications.",
+  "keywords": [
+    "PartRocks",
+    "Utils",
+    "CLI"
+  ],
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vitest",
+    "test": "vitest run",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc",
+    "ci": "pnpm run lint && pnpm run test && pnpm run build",
+    "release": "pnpm run lint && pnpm run test && pnpm run build && pnpm changeset publish",
+    "play": "pnpm run build && node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/partrocks/cli-screen-utils.git"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.9",
+    "@types/node": "^22.7.7",
+    "tsup": "^7.2.0",
+    "typescript": "^5.6.3"
+  },
+  "bugs": {
+    "url": "https://github.com/partrocks/cli-screen-utils/issues"
+  },
+  "homepage": "https://github.com/partrocks/cli-screen-utils#readme",
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  }
+}
